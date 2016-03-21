@@ -4,9 +4,9 @@
 #define IN2 6
 #define IN3 5
 #define IN4 4
-int stopLed = 11;
-int Led = 13;
-int avariyka = 12;
+int stopLed=11;
+int Led=13;
+int avariyka=12;
 
 int pinLed = 13;
 char incomingByte;
@@ -15,10 +15,9 @@ int nowspeed = 0;
 int peredacha = 0;
 
 void setup() {
-  pinMode(blut,OUTPUT);
-  pinMode(Led, OUTPUT);
-  pinMode(stopLed, OUTPUT);
-  pinMode(avariyka, OUTPUT);
+  pinMode(Led,OUTPUT);
+  pinMode(stopLed,OUTPUT);
+  pinMode(avariyka,OUTPUT);
   pinMode(ENB, OUTPUT);
   pinMode(ENA, OUTPUT);
   pinMode(IN1, OUTPUT);
@@ -29,6 +28,14 @@ void setup() {
   Serial.begin(9600);
 }
 
+void stopm() {
+  delay(30);
+  analogWrite(ENA, 0);
+  analogWrite(ENB, 0);
+  digitalWrite(avariyka,LOW);
+  digitalWrite(stopLed,LOW);
+}
+
 void go(int nowspeed)
 {
   analogWrite(ENA, nowspeed);
@@ -36,7 +43,6 @@ void go(int nowspeed)
 }
 
 void loop() {
-  digitalWrite(blut,HIGH);
   if (Serial.available() > 0) {
 
     incomingByte = Serial.read();
@@ -55,16 +61,41 @@ lable:
         digitalWrite(IN4, LOW);
         go(nowspeed);
         break;
-
+        
       case 's':
         digitalWrite(IN1, LOW);
         digitalWrite(IN2, HIGH);
         digitalWrite(IN3, LOW);
         digitalWrite(IN4, HIGH);
         go(150);
-        digitalWrite(stopLed, HIGH);
+        digitalWrite(stopLed,HIGH);
         break;
 
+      case 'a':
+
+        digitalWrite(IN1, LOW);
+        digitalWrite(IN2, HIGH);
+        digitalWrite(IN3, HIGH);
+        digitalWrite(IN4, LOW);
+        go(125);
+        digitalWrite(avariyka,HIGH);
+        break;
+
+      case 'd':
+
+        digitalWrite(IN1, HIGH);
+        digitalWrite(IN2, LOW);
+        digitalWrite(IN3, LOW);
+        digitalWrite(IN4, HIGH);
+        go(125);
+        digitalWrite(avariyka,HIGH);
+        break;
+      case 'l':
+      digitalWrite(Led,HIGH);
+      break;
+      case 'n':
+      digitalWrite(Led,LOW);
+      break;
       case '1':
         peredacha = 0;
         goto lable;
@@ -81,4 +112,5 @@ lable:
         break;
     }
   }
+  stopm();
 }
