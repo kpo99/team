@@ -39,13 +39,10 @@ int main()
     {
         while(1)
         {
-            command = getch();
+                command = getch();
 
-            if(command == 'w' || command == 's' || command == 'a' || command == 'd')
-            {
                 com[0] = command;
                 WriteFile(Port, com, numbytes, &numbytes_ok, NULL);
-            }
         }
 
 
