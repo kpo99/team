@@ -1,0 +1,32 @@
+﻿Сборка начата 10.04.2016 23:28:58.
+     1>Проект "D:\Progs\OP\team\sprint2\Application\Application\Application.vcxproj" в узле 2 (целевые объекты Build).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Sfml\SFML-2.3.2\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt "Исходный код.cpp"
+         Исходный код.cpp
+     1>d:\progs\op\team\sprint2\application\application\исходный код.cpp(34): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+     1>d:\progs\op\team\sprint2\application\application\исходный код.cpp(35): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+     1>d:\progs\op\team\sprint2\application\application\исходный код.cpp(79): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+     1>d:\progs\op\team\sprint2\application\application\исходный код.cpp(91): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+     1>d:\progs\op\team\sprint2\application\application\исходный код.cpp(103): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+     1>d:\progs\op\team\sprint2\application\application\исходный код.cpp(116): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+     1>d:\progs\op\team\sprint2\application\application\исходный код.cpp(130): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+     1>d:\progs\op\team\sprint2\application\application\исходный код.cpp(143): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+     1>d:\progs\op\team\sprint2\application\application\исходный код.cpp(155): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+     1>d:\progs\op\team\sprint2\application\application\исходный код.cpp(168): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+     1>d:\progs\op\team\sprint2\application\application\исходный код.cpp(186): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+     1>d:\progs\op\team\sprint2\application\application\исходный код.cpp(199): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+     1>d:\progs\op\team\sprint2\application\application\исходный код.cpp(211): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+     1>d:\progs\op\team\sprint2\application\application\исходный код.cpp(224): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+     1>d:\progs\op\team\sprint2\application\application\исходный код.cpp(238): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+     1>d:\progs\op\team\sprint2\application\application\исходный код.cpp(251): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+     1>d:\progs\op\team\sprint2\application\application\исходный код.cpp(263): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+     1>d:\progs\op\team\sprint2\application\application\исходный код.cpp(275): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+     1>d:\progs\op\team\sprint2\application\application\исходный код.cpp(345): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Progs\OP\team\sprint2\Application\Debug\Application.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Sfml\SFML-2.3.2\lib" "sfml-graphics-d.lib" "sfml-window-d.lib" "sfml-system-d.lib" "sfml-audio-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Progs\OP\team\sprint2\Application\Debug\Application.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Progs\OP\team\sprint2\Application\Debug\Application.lib" /MACHINE:X86 "Debug\Исходный код.obj"
+         Application.vcxproj -> D:\Progs\OP\team\sprint2\Application\Debug\Application.exe
+     1>Сборка проекта "D:\Progs\OP\team\sprint2\Application\Application\Application.vcxproj" завершена (целевые объекты Build).
+
+Сборка успешно завершена.
+
+Затраченное время: 00:00:01.35
