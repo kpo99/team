@@ -5,7 +5,7 @@
 #include <windows.h>
 #include <iostream>
 
-#define MAX_SPEED 60
+#define MAX_SPEED 15
 #define MIN_ANGLE 4
 
 using namespace sf;
@@ -39,10 +39,29 @@ int main()
 	int speed = 97;
 	int status = 0;
 	double i = 4;
-
-	HANDLE Port = CreateFile("\\\\.\\COM3", GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING, 0, NULL);
 	char com[10] = "";
 	DWORD numbytes = sizeof(char), numbytes_ok;
+
+	char * COM = "\\\\.\\COM";
+	char ComPort[20];
+	int ComNum = 1;
+	char  PortOpen[5];
+
+	HANDLE Port = INVALID_HANDLE_VALUE;
+
+	while (Port == INVALID_HANDLE_VALUE)
+	{
+		if (ComNum < 50)
+		{
+			sprintf(ComPort, "%s", COM);
+			sprintf(PortOpen, "%i", ComNum);
+			strcat(ComPort, PortOpen);
+			Port = CreateFile(ComPort, GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING, 0, NULL);
+			ComNum++;
+		}
+		else
+			return 0;
+	}
 
 	COMMTIMEOUTS CommTimeOuts;
 	CommTimeOuts.ReadIntervalTimeout = 5;
@@ -69,7 +88,7 @@ int main()
 	Images arrow("images/arrow.png", 138, 540, 77, 29);
 
 	Font font;
-	font.loadFromFile("CyrilicOld.ttf");
+	font.loadFromFile("images/CyrilicOld.ttf");
 	Text text("", font, 20);
 	text.setColor(Color::White);
 
@@ -308,9 +327,14 @@ int main()
 			status = status % 2;
 			Sleep(150);
 		}
+			else if (Keyboard::isKeyPressed(Keyboard::B))
+			{
+				com[0] = 'b';
+				WriteFile(Port, com, numbytes, &numbytes_ok, NULL);
+			}
 		else if (Keyboard::isKeyPressed(Keyboard::W))
 		{
-			if (i < speed) i += (speed - 3) / 200.0;
+			if (i < speed) i += (speed - 3) / 80.0;
 			else i -= 3.0;
 			com[0] = 'w';
 			WriteFile(Port, com, numbytes, &numbytes_ok, NULL);
@@ -319,7 +343,7 @@ int main()
 		{
 		   
 
-			if (i < 97 ) i += 0.6;
+			if (i < 97 ) i += 1.6;
 			else i -= 3.5;
 			com[0] = 's';
 			WriteFile(Port, com, numbytes, &numbytes_ok, NULL);
