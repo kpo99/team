@@ -36,4 +36,7 @@ Note: ENB and ENA use to control car speed due PWM<br/>
 19.)Connect HC-SR04 Triger to Arduino Pin 10<br/>
 20.)Compile and Upload sketch to Arduino<br/>
 21.)Run application on your Windows PC from .exe file<br/>
-
+<h4>Використання:</h4>
+Use WASD to control car moving<br/>
+Use L key to turn on/off lightning<br/>
+Use Q key to turn on/off autopilot<br/>  
